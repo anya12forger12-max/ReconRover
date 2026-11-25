@@ -26,6 +26,14 @@ The spinal cord of the rover. Written in C++ on FreeRTOS.
 * **Safety:** Hardware watchdog ensures immediate shutdown of motors on fault or Pi disconnect.
 * *It does not make decisions; it simply executes commands and reports telemetry.*
 
+## 🔐 Web UI session secret
+
+The ground-station Web UI signs session tokens with HMAC-SHA256. Set
+`RECON_ROVER_JWT_SECRET` to a long random value in the environment before
+starting it. If unset, a random per-process secret is generated, so sessions
+expire on restart — safe for development, but not suitable for a persistent
+deployment.
+
 ## 📚 Documentation
 
 The architecture is fully documented. Please refer to the `Docs/` folder before contributing.
