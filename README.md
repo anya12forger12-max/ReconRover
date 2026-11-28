@@ -13,6 +13,14 @@ Recon Rover V1 uses a strict dual-processor split, connected only by a JSON-over
 
 The separation is documented as a deliberate design rule: perception and planning live on the Pi, while timing-critical actuation and safety stay on the microcontroller.
 
+## 🔐 Web UI session secret
+
+The ground-station Web UI signs session tokens with HMAC-SHA256. Set
+`RECON_ROVER_JWT_SECRET` to a long random value in the environment before
+starting it. If unset, a random per-process secret is generated, so sessions
+expire on restart — safe for development, but not suitable for a persistent
+deployment.
+
 ## Hardware
 
 - Raspberry Pi 3B+ and ESP32-S3 N16R8
