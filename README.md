@@ -57,3 +57,14 @@ This is a reconnaissance robotics platform. Use it only where you have permissio
 ## License and credits
 
 Original project by **HariTheja21** at [github.com/HariTheja21/ReconRover](https://github.com/HariTheja21/ReconRover). The upstream README describes the project as MIT-licensed; this restored snapshot preserves that attribution but contains no license file of its own. No original authorship is claimed here.
+
+## Quick start — 1 or 2 commands
+
+```bash
+./setup.sh          # install dependencies
+./setup.sh run      # start the project (when a run target exists)
+```
+
+`setup.sh` detects this repository's build system and installs the right toolchain
+dependencies. Use `./setup.sh test` to run the available checks. If a project has no
+standard run target, the script prints the correct command from the sections above.
